@@ -1,0 +1,25 @@
+class Solution {
+    public int passThePillow(int n, int time) {
+        if (n == 0) return 0;
+        
+        int count = 1; 
+        while (time > 0) {
+            for (int i = 1; i < n; i++) {
+                time--;
+                if (time == 0) {
+                    count = i + 1;
+                    return count;
+                }
+            }
+            for (int i = n - 2; i >= 0; i--) {
+                time--;
+                if (time == 0) {
+                    count = i + 1;
+                    return count;
+                }
+            }
+        }
+        
+        return count;
+    }
+}
